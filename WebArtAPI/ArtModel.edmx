@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ArtModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FabricRollmaster">
+          <Key>
+            <PropertyRef Name="Roll_PK" />
+          </Key>
+          <Property Name="Roll_PK" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RollNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="SkuDet_PK" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Po_PK" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="MRnDet_PK" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Qty" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="UOM" Type="nvarchar" MaxLength="20" />
+          <Property Name="Remark" Type="nvarchar(max)" />
+          <Property Name="SShrink" Type="nvarchar" MaxLength="50" />
+          <Property Name="SYard" Type="nvarchar" MaxLength="50" />
+          <Property Name="SShade" Type="nvarchar" MaxLength="50" />
+          <Property Name="SWidth" Type="nvarchar" MaxLength="50" />
+          <Property Name="AShrink" Type="nchar" MaxLength="10" />
+          <Property Name="AShade" Type="nchar" MaxLength="10" />
+          <Property Name="AWidth" Type="nchar" MaxLength="10" />
+          <Property Name="AYard" Type="numeric" Precision="18" Scale="4" />
+          <Property Name="IsSaved" Type="nchar" MaxLength="10" />
+          <Property Name="IsApproved" Type="nchar" MaxLength="10" />
+          <Property Name="IsAcceptable" Type="nchar" MaxLength="10" />
+          <Property Name="MarkerType" Type="nvarchar" MaxLength="50" />
+          <Property Name="SGsm" Type="nvarchar" MaxLength="50" />
+          <Property Name="AGsm" Type="nvarchar" MaxLength="50" />
+          <Property Name="podet_pk" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="WidthGroup" Type="nchar" MaxLength="10" />
+          <Property Name="ShadeGroup" Type="nchar" MaxLength="10" />
+          <Property Name="ShrinkageGroup" Type="nchar" MaxLength="10" />
+          <Property Name="TotalDefect" Type="nchar" MaxLength="10" />
+          <Property Name="TotalDefecton100" Type="nchar" MaxLength="10" />
+          <Property Name="TotalPoint" Type="nchar" MaxLength="10" />
+          <Property Name="TotalPointon100yard" Type="nchar" MaxLength="10" />
+          <Property Name="SupplierDoc_pk" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddedDate" Type="datetime" />
+          <Property Name="InspectionApprovedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="LOTnum" Type="nvarchar" MaxLength="50" />
+          <Property Name="SWeight" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsDelivered" Type="nchar" MaxLength="10" />
+          <Property Name="IsCut" Type="nchar" MaxLength="10" />
+          <Property Name="IsMRN" Type="nchar" MaxLength="10" />
+          <Property Name="BaltoCut" Type="numeric" Precision="18" Scale="3" />
+          <Property Name="IsGrouped" Type="nchar" MaxLength="10" />
+          <Property Name="GroupedDate" Type="date" />
+          <Property Name="ValidatedDate" Type="date" />
+          <Property Name="InspectedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="LocationMaster">
+          <Key>
+            <PropertyRef Name="Location_PK" />
+          </Key>
+          <Property Name="Location_PK" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LocationName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationPrefix" Type="nchar" MaxLength="4" />
+          <Property Name="LocationAddress" Type="nvarchar(max)" />
+          <Property Name="LocationType_PK" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="LocType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="20" />
+          <Property Name="CurrencyID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="CountryID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="PaymentModeID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="PaymentTermID" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="IsActive" Type="nchar" MaxLength="1" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserMaster">
+          <Key>
+            <PropertyRef Name="User_PK" />
+          </Key>
+          <Property Name="User_PK" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserLoc_PK" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="PassCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsAdmin" Type="nchar" MaxLength="10" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="UserProfile_Pk" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Department_PK" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="UserProfileMaster">
+          <Key>
+            <PropertyRef Name="UserProfile_Pk" />
+          </Key>
+          <Property Name="UserProfile_Pk" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserProfileName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserProfileCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_UserMaster_UserProfileMaster">
+          <End Role="UserProfileMaster" Type="Self.UserProfileMaster" Multiplicity="0..1" />
+          <End Role="UserMaster" Type="Self.UserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfileMaster">
+              <PropertyRef Name="UserProfile_Pk" />
+            </Principal>
+            <Dependent Role="UserMaster">
+              <PropertyRef Name="UserProfile_Pk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ArtModelStoreContainer">
+          <EntitySet Name="FabricRollmaster" EntityType="Self.FabricRollmaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LocationMaster" EntityType="Self.LocationMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserMaster" EntityType="Self.UserMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfileMaster" EntityType="Self.UserProfileMaster" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_UserMaster_UserProfileMaster" Association="Self.FK_UserMaster_UserProfileMaster">
+            <End Role="UserProfileMaster" EntitySet="UserProfileMaster" />
+            <End Role="UserMaster" EntitySet="UserMaster" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ArtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ArtEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LocationMasters" EntityType="ArtModel.LocationMaster" />
+          <EntitySet Name="UserMasters" EntityType="ArtModel.UserMaster" />
+          <EntitySet Name="UserProfileMasters" EntityType="ArtModel.UserProfileMaster" />
+          <AssociationSet Name="FK_UserMaster_UserProfileMaster" Association="ArtModel.FK_UserMaster_UserProfileMaster">
+            <End Role="UserProfileMaster" EntitySet="UserProfileMasters" />
+            <End Role="UserMaster" EntitySet="UserMasters" />
+          </AssociationSet>
+          <EntitySet Name="FabricRollmasters" EntityType="ArtModel.FabricRollmaster" />
+        </EntityContainer>
+        <EntityType Name="LocationMaster">
+          <Key>
+            <PropertyRef Name="Location_PK" />
+          </Key>
+          <Property Name="Location_PK" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LocationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationPrefix" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="LocationAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LocationType_PK" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="LocType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="CountryID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PaymentModeID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PaymentTermID" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IsActive" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserMaster">
+          <Key>
+            <PropertyRef Name="User_PK" />
+          </Key>
+          <Property Name="User_PK" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserLoc_PK" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PassCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAdmin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="LastLogin" Type="DateTime" Precision="3" />
+          <Property Name="UserProfile_Pk" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Department_PK" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="UserProfileMaster" Relationship="ArtModel.FK_UserMaster_UserProfileMaster" FromRole="UserMaster" ToRole="UserProfileMaster" />
+        </EntityType>
+        <EntityType Name="UserProfileMaster">
+          <Key>
+            <PropertyRef Name="UserProfile_Pk" />
+          </Key>
+          <Property Name="UserProfile_Pk" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserProfileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserProfileCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="UserMasters" Relationship="ArtModel.FK_UserMaster_UserProfileMaster" FromRole="UserProfileMaster" ToRole="UserMaster" />
+        </EntityType>
+        <Association Name="FK_UserMaster_UserProfileMaster">
+          <End Type="ArtModel.UserProfileMaster" Role="UserProfileMaster" Multiplicity="0..1" />
+          <End Type="ArtModel.UserMaster" Role="UserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserProfileMaster">
+              <PropertyRef Name="UserProfile_Pk" />
+            </Principal>
+            <Dependent Role="UserMaster">
+              <PropertyRef Name="UserProfile_Pk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FabricRollmaster">
+          <Key>
+            <PropertyRef Name="Roll_PK" />
+          </Key>
+          <Property Name="Roll_PK" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RollNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SkuDet_PK" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Po_PK" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="MRnDet_PK" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Qty" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="UOM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SShrink" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SYard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SShade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SWidth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AShrink" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AShade" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AWidth" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AYard" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="IsSaved" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsApproved" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsAcceptable" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MarkerType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SGsm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AGsm" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="podet_pk" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WidthGroup" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ShadeGroup" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ShrinkageGroup" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TotalDefect" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TotalDefecton100" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TotalPoint" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TotalPointon100yard" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SupplierDoc_pk" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="AddedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddedDate" Type="DateTime" Precision="3" />
+          <Property Name="InspectionApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="LOTnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SWeight" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelivered" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsCut" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsMRN" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="BaltoCut" Type="Decimal" Precision="18" Scale="3" />
+          <Property Name="IsGrouped" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="GroupedDate" Type="DateTime" Precision="0" />
+          <Property Name="ValidatedDate" Type="DateTime" Precision="0" />
+          <Property Name="InspectedDate" Type="DateTime" Precision="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ArtModelStoreContainer" CdmEntityContainer="ArtEntities">
+          <EntitySetMapping Name="LocationMasters">
+            <EntityTypeMapping TypeName="ArtModel.LocationMaster">
+              <MappingFragment StoreEntitySet="LocationMaster">
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PaymentTermID" ColumnName="PaymentTermID" />
+                <ScalarProperty Name="PaymentModeID" ColumnName="PaymentModeID" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="LocType" ColumnName="LocType" />
+                <ScalarProperty Name="LocationType_PK" ColumnName="LocationType_PK" />
+                <ScalarProperty Name="LocationAddress" ColumnName="LocationAddress" />
+                <ScalarProperty Name="LocationPrefix" ColumnName="LocationPrefix" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="Location_PK" ColumnName="Location_PK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserMasters">
+            <EntityTypeMapping TypeName="ArtModel.UserMaster">
+              <MappingFragment StoreEntitySet="UserMaster">
+                <ScalarProperty Name="Department_PK" ColumnName="Department_PK" />
+                <ScalarProperty Name="UserProfile_Pk" ColumnName="UserProfile_Pk" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="PassCode" ColumnName="PassCode" />
+                <ScalarProperty Name="UserLoc_PK" ColumnName="UserLoc_PK" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="User_PK" ColumnName="User_PK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfileMasters">
+            <EntityTypeMapping TypeName="ArtModel.UserProfileMaster">
+              <MappingFragment StoreEntitySet="UserProfileMaster">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UserProfileCode" ColumnName="UserProfileCode" />
+                <ScalarProperty Name="UserProfileName" ColumnName="UserProfileName" />
+                <ScalarProperty Name="UserProfile_Pk" ColumnName="UserProfile_Pk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FabricRollmasters">
+            <EntityTypeMapping TypeName="ArtModel.FabricRollmaster">
+              <MappingFragment StoreEntitySet="FabricRollmaster">
+                <ScalarProperty Name="InspectedDate" ColumnName="InspectedDate" />
+                <ScalarProperty Name="ValidatedDate" ColumnName="ValidatedDate" />
+                <ScalarProperty Name="GroupedDate" ColumnName="GroupedDate" />
+                <ScalarProperty Name="IsGrouped" ColumnName="IsGrouped" />
+                <ScalarProperty Name="BaltoCut" ColumnName="BaltoCut" />
+                <ScalarProperty Name="IsMRN" ColumnName="IsMRN" />
+                <ScalarProperty Name="IsCut" ColumnName="IsCut" />
+                <ScalarProperty Name="IsDelivered" ColumnName="IsDelivered" />
+                <ScalarProperty Name="SWeight" ColumnName="SWeight" />
+                <ScalarProperty Name="LOTnum" ColumnName="LOTnum" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="InspectionApprovedBy" ColumnName="InspectionApprovedBy" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="SupplierDoc_pk" ColumnName="SupplierDoc_pk" />
+                <ScalarProperty Name="TotalPointon100yard" ColumnName="TotalPointon100yard" />
+                <ScalarProperty Name="TotalPoint" ColumnName="TotalPoint" />
+                <ScalarProperty Name="TotalDefecton100" ColumnName="TotalDefecton100" />
+                <ScalarProperty Name="TotalDefect" ColumnName="TotalDefect" />
+                <ScalarProperty Name="ShrinkageGroup" ColumnName="ShrinkageGroup" />
+                <ScalarProperty Name="ShadeGroup" ColumnName="ShadeGroup" />
+                <ScalarProperty Name="WidthGroup" ColumnName="WidthGroup" />
+                <ScalarProperty Name="podet_pk" ColumnName="podet_pk" />
+                <ScalarProperty Name="AGsm" ColumnName="AGsm" />
+                <ScalarProperty Name="SGsm" ColumnName="SGsm" />
+                <ScalarProperty Name="MarkerType" ColumnName="MarkerType" />
+                <ScalarProperty Name="IsAcceptable" ColumnName="IsAcceptable" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsSaved" ColumnName="IsSaved" />
+                <ScalarProperty Name="AYard" ColumnName="AYard" />
+                <ScalarProperty Name="AWidth" ColumnName="AWidth" />
+                <ScalarProperty Name="AShade" ColumnName="AShade" />
+                <ScalarProperty Name="AShrink" ColumnName="AShrink" />
+                <ScalarProperty Name="SWidth" ColumnName="SWidth" />
+                <ScalarProperty Name="SShade" ColumnName="SShade" />
+                <ScalarProperty Name="SYard" ColumnName="SYard" />
+                <ScalarProperty Name="SShrink" ColumnName="SShrink" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="MRnDet_PK" ColumnName="MRnDet_PK" />
+                <ScalarProperty Name="Po_PK" ColumnName="Po_PK" />
+                <ScalarProperty Name="SkuDet_PK" ColumnName="SkuDet_PK" />
+                <ScalarProperty Name="RollNum" ColumnName="RollNum" />
+                <ScalarProperty Name="Roll_PK" ColumnName="Roll_PK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

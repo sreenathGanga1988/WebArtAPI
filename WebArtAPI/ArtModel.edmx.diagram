@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="96d6fa50db834ea7aaaa21d9b7aa7bc9" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="ArtModel.LocationMaster" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ArtModel.UserMaster" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ArtModel.UserProfileMaster" Width="1.5" PointX="3.125" PointY="6.125" />
+        <AssociationConnector Association="ArtModel.FK_UserMaster_UserProfileMaster" />
+        <EntityTypeShape EntityType="ArtModel.FabricRollmaster" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
